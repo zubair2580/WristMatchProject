@@ -1,5 +1,7 @@
 # WristMatch
 
+Wrist Match began with a simple frustration: product photographs show a watch, but they rarely help you imagine it as yours. We built a quieter storefront and a private try-on studio so decisions feel calmer, clearer, and more personal.
+
 WristMatch is a watch discovery, **YouCam Skin Look Match**, and **YouCam Watch Virtual Try-On** commerce experience built for the [YouCam API Skin AI & eCommerce VTO Hackathon](https://youcam-api-skin-ai-ecommerce.devpost.com/).
 
 ## YouCam APIs
@@ -41,7 +43,7 @@ Without `YouCam:ApiKey`, Studio and Look Match run in labelled **demo** mode.
 | Setting | Notes |
 |---|---|
 | `YouCam:ApiKey` / `YouCam__ApiKey` | Perfect Corp bearer token — never commit |
-| `YouCam:BaseUrl` | Default `https://yce-api-01.makeupar.com` |
+| `YouCam:BaseUrl` | Default `https://yce.makeupar.com` / `https://yce-api-01.makeupar.com` |
 | `TryOn:ProviderMode` | `youcam` or `demo` |
 | `Cors:FrontendOrigin` | Default `http://localhost:5173` |
 | `Admin:BootstrapEmail` / `Admin:BootstrapPassword` | First SuperAdmin via user-secrets |
