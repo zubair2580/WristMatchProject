@@ -1,0 +1,6 @@
+@WristMatch.Api_HostAddress = http://localhost:5118
+
+GET {{WristMatch.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

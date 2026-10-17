@@ -1,0 +1,46 @@
+## .NET
+**/bin/
+**/obj/
+**/.vs/
+*.user
+*.suo
+*.user
+*.swp
+*.DotSettings.user
+TestResults/
+*.nupkg
+
+## Private / secrets
+.env
+.env.*
+!.env.example
+**/appsettings.*.local.json
+**/secrets.json
+*.cookies
+devadmin.cookies
+session.cookies
+response.txt
+NUL
+
+## Private media (user photos / try-on results)
+**/private-media/
+WristMatch.Api/private-media/
+
+## Node / frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+*.log
+npm-debug.log*
+
+## OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+## Coverage / caches
+coverage/
+*.tsbuildinfo
+frontend/tsconfig.tsbuildinfo
