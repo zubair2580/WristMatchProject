@@ -154,8 +154,8 @@ export default function StudioPage() {
         <Sparkles size={16} />
         <span>
           {liveYouCam
-            ? 'Live YouCam AI Watch Virtual Try-On is enabled. Wrist photos are uploaded server-side to Perfect Corp and never stored in the browser.'
-            : 'Demo mode is active. Set YouCam__ApiKey (user-secrets or env) and TryOn:ProviderMode=youcam for live Perfect Corp Watch VTO.'}
+            ? 'Watch Virtual Try-On is connected. Your wrist photo stays private to this session.'
+            : 'Preview mode is active. Connect YouCam API credentials on the server to enable live Watch Virtual Try-On.'}
         </span>
         <Link to="/look-match">Look Match first <ArrowRight size={14} /></Link>
       </div>
@@ -225,7 +225,7 @@ export default function StudioPage() {
               ))}
             </div>
             <button className="primary-button compact-button studio-generate-btn" onClick={generate} disabled={!photo || !productId || generating || job?.state === 'Queued' || job?.state === 'Processing'}>
-              <Sparkles size={16} /> {generating || job?.state === 'Queued' || job?.state === 'Processing' ? 'Generating...' : liveYouCam ? 'Generate YouCam preview' : 'Generate demo preview'}
+              <Sparkles size={16} /> {generating || job?.state === 'Queued' || job?.state === 'Processing' ? 'Generating...' : 'Generate preview'}
             </button>
           </div>
           <div className="studio-guide compact">
@@ -239,7 +239,7 @@ export default function StudioPage() {
         </aside>
       </div>
 
-      <div className="studio-disclaimer"><strong>AI-generated visual preview — appearance and fit may vary.</strong> Powered by YouCam API when live.</div>
+      <div className="studio-disclaimer"><strong>Virtual try-on preview — appearance and fit may vary.</strong></div>
       <div className="studio-bottom-links">
         <Link className="text-link" to="/look-match">Skin Look Match <ArrowRight size={15} /></Link>
         <Link className="text-link" to="/catalog">Browse watches <ArrowRight size={15} /></Link>

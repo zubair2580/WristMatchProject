@@ -116,7 +116,6 @@ public sealed class DemoTryOnProvider(IConfiguration configuration) : ITryOnProv
         Directory.CreateDirectory(Path.GetDirectoryName(absolute)!);
 
         using var image = await Image.LoadAsync(request.WristPhotoPath, cancellationToken);
-        // Demo adapter: normalize the private photo into a labelled preview artifact without calling an external provider.
         image.Mutate(ctx => ctx.GaussianBlur(0.6f).Contrast(1.05f));
         await image.SaveAsJpegAsync(absolute, new JpegEncoder { Quality = 90 }, cancellationToken);
         return new TryOnProviderResult(true, relativeKey.Replace('\\', '/'), $"demo-{Guid.NewGuid():N}"[..24], $"Demo preview for {request.ProductName}");

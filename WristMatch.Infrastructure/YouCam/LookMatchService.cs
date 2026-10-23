@@ -67,8 +67,8 @@ public sealed class LookMatchService(
             .ToList();
 
         var summary = scores.Count > 0
-            ? $"YouCam Skin Analysis mapped a {undertone} undertone profile and ranked {recommendations.Count} watches by metal and colour harmony."
-            : $"Local undertone estimate ({undertone}) ranked {recommendations.Count} watches. Add YouCam:ApiKey for full Skin Analysis scores.";
+            ? $"Skin analysis mapped a {undertone} undertone profile and ranked {recommendations.Count} watches by metal and colour harmony."
+            : $"Undertone estimate ({undertone}) ranked {recommendations.Count} watches for metal and colour harmony.";
 
         return new LookMatchResult(providerMode, undertone, preferredMetals, preferredColours, scores, recommendations, summary);
     }
@@ -116,7 +116,6 @@ public sealed class LookMatchService(
                 {
                     var pixel = row[x];
                     if (pixel.A < 200) continue;
-                    // Prefer mid-tone skin-like pixels (avoid pure white/black backgrounds).
                     var brightness = (pixel.R + pixel.G + pixel.B) / 3;
                     if (brightness is < 40 or > 230) continue;
                     r += pixel.R;

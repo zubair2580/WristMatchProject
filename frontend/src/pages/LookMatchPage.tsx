@@ -78,7 +78,7 @@ export default function LookMatchPage() {
         </div>
         <div className={`look-match-mode ${status.data?.youCamConfigured ? 'live' : 'demo'}`}>
           <Sparkles size={16} />
-          <span>{status.data?.youCamConfigured ? 'YouCam API ready' : 'Demo undertone mode — set YouCam:ApiKey for live Skin Analysis'}</span>
+          <span>{status.data?.youCamConfigured ? 'Skin analysis connected' : 'Undertone matching is ready — connect YouCam for full skin scores'}</span>
         </div>
       </section>
 

@@ -77,7 +77,6 @@ await using (var scope = app.Services.CreateAsyncScope())
         }
         else
         {
-            // Keep local bootstrap password in sync with user-secrets / env (dev-friendly).
             if (!await userManager.CheckPasswordAsync(bootstrapUser, bootstrapPassword))
             {
                 var token = await userManager.GeneratePasswordResetTokenAsync(bootstrapUser);
@@ -90,7 +89,6 @@ await using (var scope = app.Services.CreateAsyncScope())
             }
             if (!await userManager.IsInRoleAsync(bootstrapUser, "SuperAdmin"))
                 await userManager.AddToRoleAsync(bootstrapUser, "SuperAdmin");
-            // Clear lockout from failed attempts
             if (await userManager.IsLockedOutAsync(bootstrapUser))
                 await userManager.SetLockoutEndDateAsync(bootstrapUser, null);
         }
@@ -138,7 +136,6 @@ await using (var scope = app.Services.CreateAsyncScope())
         await permissionDb.SaveChangesAsync();
     }
 
-    // Ensure every active product has sellable stock at the primary warehouse (fixes confirm/reserve for storefront orders).
     var stockDb = scope.ServiceProvider.GetRequiredService<WristMatchDbContext>();
     var primaryWarehouse = await stockDb.Warehouses.AsNoTracking().Where(item => item.IsActive).OrderBy(item => item.Code).Select(item => item.Id).FirstOrDefaultAsync();
     if (primaryWarehouse != Guid.Empty)

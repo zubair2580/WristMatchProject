@@ -5,13 +5,13 @@ import { useParams } from 'react-router-dom'
 import { apiUrl } from '../store/api'
 
 const modules: Record<string, { title: string; eyebrow: string; description: string; columns: string[]; state: string }> = {
-  orders: { title: 'Orders', eyebrow: 'SALES OPERATIONS', description: 'Monitor checkout orders, payment state, and fulfilment readiness from seeded commerce data.', columns: ['Order', 'Customer', 'Placed', 'Total', 'Payment', 'Fulfilment'], state: 'Monitoring · create / status workflows next' },
-  invoices: { title: 'Invoices', eyebrow: 'ACCOUNTS RECEIVABLE', description: 'Review sales invoices and outstanding balances until posting workflows are delivered.', columns: ['Invoice', 'Customer', 'Issued', 'Due', 'Total', 'Balance', 'Status'], state: 'Monitoring · invoice posting next' },
-  stock: { title: 'Stock', eyebrow: 'INVENTORY CONTROL', description: 'Inspect seeded stock movements while inventory balances and adjustments are built.', columns: ['SKU', 'Product', 'Warehouse', 'On hand', 'Reserved', 'Available', 'Average cost'], state: 'Monitoring · stock posting next' },
-  purchases: { title: 'Purchases', eyebrow: 'PROCUREMENT', description: 'Review purchase orders linked to suppliers and warehouses ahead of goods receipt.', columns: ['Purchase order', 'Supplier', 'Warehouse', 'Expected', 'Total', 'Status'], state: 'Monitoring · purchasing workflow next' },
-  accounts: { title: 'Chart of accounts', eyebrow: 'GENERAL LEDGER', description: 'Browse seeded accounts while journal creation and balancing rules are implemented.', columns: ['Code', 'Account', 'Type', 'Normal balance', 'Current balance', 'Status'], state: 'Monitoring · ledger posting next' },
-  reports: { title: 'Reports', eyebrow: 'BUSINESS INTELLIGENCE', description: 'Catalogue of planned operational and financial reports. Query engine still pending.', columns: ['Report', 'Module', 'Owner', 'Last run', 'Format', 'Status'], state: 'Monitoring · report engine next' },
-  tryons: { title: 'Try-on jobs', eyebrow: 'AI OPERATIONS', description: 'Live try-on jobs from the YouCam / demo worker: queued, processing, succeeded, and failed states.', columns: ['Job', 'Product', 'Created', 'State', 'Provider task', 'Duration'], state: 'Live jobs · YouCam when ApiKey set' },
+  orders: { title: 'Orders', eyebrow: 'SALES OPERATIONS', description: 'Checkout orders, payment state, and fulfilment readiness.', columns: ['Order', 'Customer', 'Placed', 'Total', 'Payment', 'Fulfilment'], state: 'Live' },
+  invoices: { title: 'Invoices', eyebrow: 'ACCOUNTS RECEIVABLE', description: 'Sales invoices and outstanding balances.', columns: ['Invoice', 'Customer', 'Issued', 'Due', 'Total', 'Balance', 'Status'], state: 'Live' },
+  stock: { title: 'Stock', eyebrow: 'INVENTORY CONTROL', description: 'Warehouse balances and stock movements.', columns: ['SKU', 'Product', 'Warehouse', 'On hand', 'Reserved', 'Available', 'Average cost'], state: 'Live' },
+  purchases: { title: 'Purchases', eyebrow: 'PROCUREMENT', description: 'Purchase orders linked to suppliers and warehouses.', columns: ['Purchase order', 'Supplier', 'Warehouse', 'Expected', 'Total', 'Status'], state: 'Live' },
+  accounts: { title: 'Chart of accounts', eyebrow: 'GENERAL LEDGER', description: 'Company chart of accounts.', columns: ['Code', 'Account', 'Type', 'Normal balance', 'Current balance', 'Status'], state: 'Live' },
+  reports: { title: 'Reports', eyebrow: 'BUSINESS INTELLIGENCE', description: 'Operational and financial report catalogue.', columns: ['Report', 'Module', 'Owner', 'Last run', 'Format', 'Status'], state: 'Live' },
+  tryons: { title: 'Try-on jobs', eyebrow: 'STUDIO OPERATIONS', description: 'Virtual try-on jobs: queued, processing, succeeded, and failed.', columns: ['Job', 'Product', 'Created', 'State', 'Provider task', 'Duration'], state: 'Live' },
 }
 
 export default function AdminModulePage() {

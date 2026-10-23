@@ -123,7 +123,6 @@ public sealed class CheckoutController(WristMatchDbContext db, IConfiguration co
         }
         catch (InvalidOperationException)
         {
-            // Leave as draft when stock cannot be reserved; still visible in admin.
         }
 
         IssueCustomerCookie(customer.Id);

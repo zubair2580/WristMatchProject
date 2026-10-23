@@ -34,15 +34,13 @@ dotnet user-secrets set "YouCam:ApiKey" "YOUR_KEY" --project WristMatch.Api
 5. `dotnet run --project WristMatch.Api`
 6. `cd frontend && npm install && npm run dev`
 
-Without `YouCam:ApiKey`, Studio and Look Match run in labelled **demo** mode.
-
-`TryOn:ProviderMode` defaults to `youcam`. Live mode activates only when the API key is present.
+Without `YouCam:ApiKey`, Studio and Look Match use local preview matching. Set `TryOn:ProviderMode` to `youcam` and provide an API key for live Perfect Corp processing.
 
 ## Configuration
 
 | Setting | Notes |
 |---|---|
-| `YouCam:ApiKey` / `YouCam__ApiKey` | Perfect Corp bearer token — never commit |
+| `YouCam:ApiKey` / `YouCam__ApiKey` | Perfect Corp bearer token (user-secrets or environment) |
 | `YouCam:BaseUrl` | Default `https://yce.makeupar.com` / `https://yce-api-01.makeupar.com` |
 | `TryOn:ProviderMode` | `youcam` or `demo` |
 | `Cors:FrontendOrigin` | Default `http://localhost:5173` |

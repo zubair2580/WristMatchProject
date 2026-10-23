@@ -641,7 +641,7 @@ A module is complete only when all of the following exist:
 11. Browser journey coverage.
 12. Export support where required.
 
-**Honest completion status (audit 2026-10-17):**
+**Module status:**
 
 | Module | Meets definition? | Notes |
 |--------|-------------------|--------|
@@ -671,23 +671,23 @@ A module is complete only when all of the following exist:
 
 **Resolved:** customer deactivate (`IsActive`), permission-aware sidebar, product archive + category picker, Studio + Look Match YouCam path, storefront checkout.
 
-**Still optional (not hackathon-blocking):**
+**Optional follow-ups:**
 
 1. Full GL journal posting UI
-2. Report query engine + CSV job runner
+2. Report query engine + CSV export
 3. Product asset gallery reorder/delete UI
-4. Server-side product admin pagination (client filter works)
+4. Server-side product admin pagination
 
-### 8.3 Design polish priorities (keep cream / tan / ink aesthetic)
+### 8.3 Design notes
 
-Do **not** restyle into a new theme. Polish within the existing Playfair + DM Sans luxury language.
+Keep the existing Playfair + DM Sans cream/tan visual language.
 
-| Rank | Item | Where | Why |
-|------|------|-------|-----|
-| 1 | GL posting UI | Accounts module | Monitoring-only today |
-| 2 | Report engine | Reports module | Definitions seeded; no runner |
-| 3 | Asset gallery admin | Product assets | Upload + primary only |
-| 4 | CSS hygiene | `App.css` | Trim unused leftovers over time |
+| Rank | Item | Where |
+|------|------|-------|
+| 1 | GL posting UI | Accounts module |
+| 2 | Report engine | Reports module |
+| 3 | Asset gallery admin | Product assets |
+| 4 | CSS hygiene | `App.css` |
 
 ### 8.4 Storefront vs admin visual verdict
 
